@@ -23,15 +23,19 @@ UseKey = 0x12
 -- Fast_Decline为快速下压力度
 -- 6 对 LMS 乘于 ADS 取整的结果再加上 Level 减去 2
 -- 例如：LMS = 5 / ADS = 1 / Level = 6 // (3 * 1) + 5 - 2 = 5
-Range = (6 // (LMD * ADS)) + Level - 2
-Decline_range = (Decline + 2) * LMD
-Fast_Decline = Range * 12
+range = (6 // (LMD * ADS)) + Level - 2
+declineRange = (Decline + 2) * LMD
+fastDecline = range * 12
 
 local switch = false
-local time
-local time2
-local freshCasLockTime
-local startTime
+-- 控制下压时间
+local declineTime = 0
+-- 开始抖枪时间
+local holdShakeTime = 0
+-- 开关状态缓存间隔
+local freshCasLockFrequency = 200
+-- 开关状态最后刷新时间
+local lastFreshCasLockTime = GetRunningTime()
 EnablePrimaryMouseButtonEvents(true)
 function OnEvent(event, arg)
     if (event == "MOUSE_BUTTON_PRESSED" and arg == YJHJButton) then
@@ -51,7 +55,6 @@ function OnEvent(event, arg)
         switch = not switch
     end
     clearTime()
-    startTime = GetRunningTime()
     if (Kai_Jing == 1) then
         while (IsMouseButtonPressed(3))
         do
@@ -85,14 +88,14 @@ function BetterSleep(t)
         sleep_end_time = GetRunningTime()
         sleep_elapsed = sleep_end_time - sleep_start_time
     until (sleep_elapsed > t)
-    time = time + t
-    time2 = time2 + t
+    declineTime = declineTime + t
+    holdShakeTime = holdShakeTime + t
 end
 
 function clearTime()
-    time = 0
-    time2 = 0
-    freshCasLockTime = 0
+    declineTime = 0
+    holdShakeTime = 0
+    lastFreshCasLockTime = GetRunningTime()
 end
 --抖枪
 function shake()
@@ -103,29 +106,13 @@ function shake()
     end
     -- 根据LMD和ADS调整Range和Decline_range
     -- 先左上后右下
-    MoveMouseRelative(-Range, -Range)
-    -- 每次睡眠增加time和time2 当time大于Decline_range时，下压
-    -- 一开始下压力度为4，每次下压后time2增加Frequency
-    -- 当time2在100ms内时，连续下压4次
-    -- 当time2在200ms内时，连续下压3次
-    -- 当time2在400ms内时，连续下压2次
-    -- 当time2大于400ms时，下压1次
-    -- 每次下压后time2清零
+    MoveMouseRelative(-range, -range)
     BetterSleep(Frequency)
-    MoveMouseRelative(Range, Range)
+    MoveMouseRelative(range, range)
     BetterSleep(Frequency)
-    if (time >= Decline_range) then
-        MoveMouseRelative(0, 1)
-        if (time2 <= 400) then
-            MoveMouseRelative(0, 1)
-            if (time2 <= 200) then
-                MoveMouseRelative(0, 1)
-                if (time2 <= 100) then
-                    MoveMouseRelative(0, 1)
-                end
-            end
-        end
-        time = 0
+    if (declineTime >= declineRange) then
+        mouseRelativeByHoldShakeTime()
+        declineTime = 0
     end
 end
 
@@ -133,12 +120,30 @@ function checkSwitch()
     if (SwitchButton ~= 888) then
         return
     end
-    if (GetRunningTime() - startTime > 200) then
+    if (GetRunningTime() - lastFreshCasLockTime > freshCasLockFrequency) then
         if (IsKeyLockOn("capslock")) then
             switch = true
         else
             switch = false
         end
-        startTime = GetRunningTime()
+        lastFreshCasLockTime = GetRunningTime()
+    end
+end
+
+-- 每次睡眠增加time和time2 当time大于Decline_range时，下压
+-- 一开始下压力度为4，每次下压后time2增加Frequency
+-- 当time2在100ms内时，连续下压4次
+-- 当time2在200ms内时，连续下压3次
+-- 当time2在400ms内时，连续下压2次
+-- 当time2大于400ms时，下压1次
+-- 每次下压后time清零
+function mouseRelativeByHoldShakeTime()
+    relativeTime = math.log(holdShakeTime / 100, 2)
+    relativeTime = math.max(relativeTime, -1)
+    relativeTime = math.min(relativeTime, 2)
+    relativeTime = math.floor(relativeTime)
+    relativeTime = 3 - relativeTime
+    for _ = 1, relativeTime do
+        MoveMouseRelative(0, 1)
     end
 end

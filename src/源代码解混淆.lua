@@ -76,8 +76,8 @@ OutputLogMessage("||          "..test..quanwangdujia..test.."           ||\n" )
 OutputLogMessage("======================================================================" )
 
 
-Range = (6//(LMD*ADS))+Level-2
-Decline_range = (Decline+2)*LMD
+range = (6//(LMD*ADS))+Level-2
+declineRange = (Decline+2)*LMD
 
 local switch = false
 if(Xian_Yu_ID == "ID:tb305645003"  and Xian_Yu == "Hong_Shi_Liu_De_Ou_Zhou_Bai_La_45_46" )then
@@ -114,7 +114,7 @@ function OnEvent(event, arg)
     --抖枪
     time  = 0
     time2 = 0
-    Fast_Decline = Range * 12
+    fastDecline = range * 12
 
     if (SwitchButton == 888 and Xian_Yu == "Hong_Shi_Liu_De_Ou_Zhou_Bai_La_45_46"  and Xian_Yu_ID == "ID:tb305645003" )then
         if (IsKeyLockOn("capslock")) then
@@ -134,15 +134,15 @@ function OnEvent(event, arg)
         while(IsMouseButtonPressed(3))
         do
             if ( IsMouseButtonPressed(1) and Kai_Jing == 1 ) then
-                MoveMouseRelative(-Range, -Range)
+                MoveMouseRelative(-range, -range)
                 BetterSleep(Frequency)
                 time = time + Frequency
                 time2 = time2 + Frequency
-                MoveMouseRelative(Range, Range)
+                MoveMouseRelative(range, range)
                 BetterSleep(Frequency)
                 time = time + Frequency
                 time2 = time2 + Frequency
-                if( time >= Decline_range )then
+                if( time >= declineRange)then
                     MoveMouseRelative(0, 1)
                     if( time2 <= 400 )then
                         MoveMouseRelative(0, 1)
@@ -162,15 +162,15 @@ function OnEvent(event, arg)
     if (switch == true and Kai_Jing == 2 ) then
         if ( event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
             repeat
-                MoveMouseRelative(-Range, -Range)
+                MoveMouseRelative(-range, -range)
                 BetterSleep(Frequency)
                 time = time + Frequency
                 time2 = time2 + Frequency
-                MoveMouseRelative(Range, Range)
+                MoveMouseRelative(range, range)
                 BetterSleep(Frequency)
                 time = time + Frequency
                 time2 = time2 + Frequency
-                if( time >= Decline_range )then
+                if( time >= declineRange)then
                     MoveMouseRelative(0, 1)
                     if( time2 <= 400 )then
                         MoveMouseRelative(0, 1)
