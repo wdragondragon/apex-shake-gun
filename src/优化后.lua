@@ -1,3 +1,4 @@
+-- JDragon改良，开镜开枪时能随时开关抖枪，不需要松开鼠标
 LMD = 3.0
 --LMD输入游戏内鼠标灵敏度
 ADS = 1.0
@@ -29,6 +30,8 @@ Fast_Decline = Range * 12
 local switch = false
 local time
 local time2
+local freshCasLockTime
+local startTime
 EnablePrimaryMouseButtonEvents(true)
 function OnEvent(event, arg)
     if (event == "MOUSE_BUTTON_PRESSED" and arg == YJHJButton) then
@@ -47,10 +50,8 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == SwitchButton) then
         switch = not switch
     end
-    if (not switch) then
-        return
-    end
     clearTime()
+    startTime = GetRunningTime()
     if (Kai_Jing == 1) then
         while (IsMouseButtonPressed(3))
         do
@@ -91,9 +92,15 @@ end
 function clearTime()
     time = 0
     time2 = 0
+    freshCasLockTime = 0
 end
 --抖枪
 function shake()
+    -- 每次过200ms需要检查开关是否打开
+    checkSwitch()
+    if (not switch) then
+        return
+    end
     -- 根据LMD和ADS调整Range和Decline_range
     -- 先左上后右下
     MoveMouseRelative(-Range, -Range)
@@ -119,5 +126,19 @@ function shake()
             end
         end
         time = 0
+    end
+end
+
+function checkSwitch()
+    if (SwitchButton ~= 888) then
+        return
+    end
+    if (GetRunningTime() - startTime > 200) then
+        if (IsKeyLockOn("capslock")) then
+            switch = true
+        else
+            switch = false
+        end
+        startTime = GetRunningTime()
     end
 end
