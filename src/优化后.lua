@@ -34,6 +34,10 @@ local declineTime = 0
 local holdShakeTime = 0
 -- 开关状态缓存间隔
 local freshCasLockFrequency = 200
+-- 连点频率
+local clickFrequency = 100
+-- 最后连点时间
+local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
 local lastFreshCasLockTime = GetRunningTime()
 EnablePrimaryMouseButtonEvents(true)
@@ -55,12 +59,11 @@ function OnEvent(event, arg)
         switch = not switch
     end
     clearTime()
+    BetterSleep(5)
     if (Kai_Jing == 1) then
-        while (IsMouseButtonPressed(3))
+        while (IsMouseButtonPressed(3) or IsMouseButtonPressed(5))
         do
-            if (IsMouseButtonPressed(1) and Kai_Jing == 1) then
-                shake()
-            end
+            shake()
         end
     elseif (Kai_Jing == 2) then
         if (event == "MOUSE_BUTTON_PRESSED" and arg == 1) then
@@ -99,20 +102,29 @@ function clearTime()
 end
 --抖枪
 function shake()
-    -- 每次过200ms需要检查开关是否打开
-    checkSwitch()
-    if (not switch) then
+    pressed1 = IsMouseButtonPressed(1)
+    pressed5 = IsMouseButtonPressed(5)
+    if (not pressed1 and not pressed5) then
         return
     end
     -- 根据LMD和ADS调整Range和Decline_range
     -- 先左上后右下
-    MoveMouseRelative(-range, -range)
-    BetterSleep(Frequency)
-    MoveMouseRelative(range, range)
-    BetterSleep(Frequency)
-    if (declineTime >= declineRange) then
-        mouseRelativeByHoldShakeTime()
-        declineTime = 0
+    checkSwitch()
+    if (switch) then
+        MoveMouseRelative(-range, -range)
+        BetterSleep(Frequency)
+    end
+
+    if (pressed5) then
+        clickShoot()
+    end
+    if (switch) then
+        MoveMouseRelative(range, range)
+        BetterSleep(Frequency)
+        if (declineTime >= declineRange) then
+            mouseRelativeByHoldShakeTime()
+            declineTime = 0
+        end
     end
 end
 
@@ -128,10 +140,17 @@ function checkSwitch()
         end
         lastFreshCasLockTime = GetRunningTime()
     end
+    return switch
 end
 
+function clickShoot()
+    if (GetRunningTime() - lastClickTime > clickFrequency) then
+        PressAndReleaseKey('z')
+        lastClickTime = GetRunningTime()
+    end
+end
 -- 每次睡眠增加time和time2 当time大于Decline_range时，下压
--- 一开始下压力度为4，每次下压后time2增加Frequency
+-- 一开始下压力度为4，每次下压后time2增加FrequencyZ
 -- 当time2在100ms内时，连续下压4次
 -- 当time2在200ms内时，连续下压3次
 -- 当time2在400ms内时，连续下压2次
