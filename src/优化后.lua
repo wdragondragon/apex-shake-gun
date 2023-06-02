@@ -34,9 +34,17 @@ local declineTime = 0
 local holdShakeTime = 0
 -- 开关状态缓存间隔
 local freshCasLockFrequency = 200
--- 连点频率
+
+-- 连发间隔
 local clickFrequency = 100
--- 最后连点时间
+-- 连发绑定第二开枪键
+local secondClick = 'z'
+-- 连发按键
+local clickKey = 5
+
+local clickSwitch = false
+
+
 local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
 local lastFreshCasLockTime = GetRunningTime()
@@ -61,7 +69,7 @@ function OnEvent(event, arg)
     clearTime()
     BetterSleep(5)
     if (Kai_Jing == 1) then
-        while (IsMouseButtonPressed(3) or IsMouseButtonPressed(5))
+        while (IsMouseButtonPressed(3) or IsMouseButtonPressed(clickKey))
         do
             shake()
         end
@@ -103,7 +111,8 @@ end
 --抖枪
 function shake()
     pressed1 = IsMouseButtonPressed(1)
-    pressed5 = IsMouseButtonPressed(5)
+    pressed5 = IsMouseButtonPressed(clickKey)
+    --pressed5 = false
     if (not pressed1 and not pressed5) then
         return
     end
@@ -145,7 +154,7 @@ end
 
 function clickShoot()
     if (GetRunningTime() - lastClickTime > clickFrequency) then
-        PressAndReleaseKey('z')
+        PressAndReleaseKey(secondClick)
         lastClickTime = GetRunningTime()
     end
 end
@@ -155,7 +164,7 @@ end
 -- 当time2在200ms内时，连续下压3次
 -- 当time2在400ms内时，连续下压2次
 -- 当time2大于400ms时，下压1次
--- 每次下压后time清零
+-- 每次下压后time清零\
 function mouseRelativeByHoldShakeTime()
     relativeTime = math.log(holdShakeTime / 100, 2)
     relativeTime = math.max(relativeTime, -1)
