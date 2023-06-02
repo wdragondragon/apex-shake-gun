@@ -41,9 +41,13 @@ local clickFrequency = 100
 local secondClick = 'z'
 -- 连发按键
 local clickKey = 5
-
+-- 连发开关键 支持 capslock numlock scrolllock 不能与总开关相同（默认capslock）
+local clickSwitchToggle = "numlock"
+-- 连发开关状态
 local clickSwitch = false
 
+-- 连发键双用功能键，（定制：侧键 连发与功能键双用）
+local clickDoubleUse = 'x'
 
 local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
@@ -66,6 +70,7 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == SwitchButton) then
         switch = not switch
     end
+    clickSwitch = IsKeyLockOn(clickSwitchToggle)
     clearTime()
     BetterSleep(5)
     if (Kai_Jing == 1) then
@@ -125,7 +130,11 @@ function shake()
     end
 
     if (pressed5) then
-        clickShoot()
+        if (clickSwitch) then
+            clickShoot()
+        else
+            PressAndReleaseMouseButton(clickDoubleUse)
+        end
     end
     if (switch) then
         MoveMouseRelative(range, range)
@@ -147,6 +156,7 @@ function checkSwitch()
         else
             switch = false
         end
+        clickSwitch = IsKeyLockOn(clickSwitchToggle)
         lastFreshCasLockTime = GetRunningTime()
     end
     return switch
