@@ -47,7 +47,7 @@ local clickSwitchToggle = "numlock"
 local clickSwitch = false
 
 -- 连发键双用功能键，（定制：侧键 连发与功能键双用）
-local clickDoubleUse = 'x'
+local clickDoubleUse = 'z'
 
 local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
@@ -141,11 +141,7 @@ function shake()
     end
 
     if (pressed5) then
-        if (clickSwitch) then
-            clickShoot()
-        else
-            PressAndReleaseMouseButton(clickDoubleUse)
-        end
+        clickShoot()
     end
     if (switch) then
         MoveMouseRelative(range, range)
@@ -172,7 +168,7 @@ function checkSwitch()
         --OutputLogMessage("Mouse is at %d\n", xRelative)
         if(xRelative>relativeMoveCloseShake) then
             switch = false
-            --OutputLogMessage("relative move close shake\n")
+            OutputLogMessage("relative move close shake %s\n",GetRunningTime())
         end
         xRelative = 0
     end
@@ -187,7 +183,11 @@ end
 
 function clickShoot()
     if (GetRunningTime() - lastClickTime > clickFrequency) then
-        PressAndReleaseKey(secondClick)
+        if (clickSwitch) then
+            PressAndReleaseKey(secondClick)
+        else
+            PressAndReleaseKey(clickDoubleUse)
+        end
         lastClickTime = GetRunningTime()
     end
 end
