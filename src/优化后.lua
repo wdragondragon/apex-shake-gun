@@ -33,7 +33,7 @@ local declineTime = 0
 -- 开始抖枪时间
 local holdShakeTime = 0
 -- 开关状态缓存间隔
-local freshCasLockFrequency = 200
+local freshCasLockFrequency = 50
 
 -- 连发间隔
 local clickFrequency = 100
@@ -41,13 +41,22 @@ local clickFrequency = 100
 local secondClick = 'z'
 -- 连发按键
 local clickKey = 5
-
+-- 连发开关键
+local clickSwitchToggle = "numlock"
+-- 连发开关状态
 local clickSwitch = false
-
 
 local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
 local lastFreshCasLockTime = GetRunningTime()
+
+
+-- 鼠标移动幅度超过阈值，关闭抖枪
+local relativeMoveCloseShake = 600
+-- 暂存x坐标
+local xTemp = 0
+-- 相对移动
+local xRelative = 0
 EnablePrimaryMouseButtonEvents(true)
 function OnEvent(event, arg)
     if (event == "MOUSE_BUTTON_PRESSED" and arg == YJHJButton) then
@@ -66,8 +75,10 @@ function OnEvent(event, arg)
     elseif (event == "MOUSE_BUTTON_PRESSED" and arg == SwitchButton) then
         switch = not switch
     end
+    clickSwitch = IsKeyLockOn(clickSwitchToggle)
     clearTime()
     BetterSleep(5)
+    checkMouseMoveRelative()
     if (Kai_Jing == 1) then
         while (IsMouseButtonPressed(3) or IsMouseButtonPressed(clickKey))
         do
@@ -108,6 +119,7 @@ function clearTime()
     holdShakeTime = 0
     lastFreshCasLockTime = GetRunningTime()
 end
+
 --抖枪
 function shake()
     pressed1 = IsMouseButtonPressed(1)
@@ -116,6 +128,7 @@ function shake()
     if (not pressed1 and not pressed5) then
         return
     end
+    checkMouseMoveRelative()
     -- 根据LMD和ADS调整Range和Decline_range
     -- 先左上后右下
     checkSwitch()
@@ -124,7 +137,7 @@ function shake()
         BetterSleep(Frequency)
     end
 
-    if (pressed5) then
+    if (pressed5 and clickSwitch) then
         clickShoot()
     end
     if (switch) then
@@ -147,9 +160,22 @@ function checkSwitch()
         else
             switch = false
         end
+        clickSwitch = IsKeyLockOn(clickSwitchToggle)
         lastFreshCasLockTime = GetRunningTime()
+        --OutputLogMessage("Mouse is at %d\n", xRelative)
+        if(xRelative>relativeMoveCloseShake) then
+            switch = false
+            --OutputLogMessage("relative move close shake\n")
+        end
+        xRelative = 0
     end
     return switch
+end
+
+function checkMouseMoveRelative()
+    x, y = GetMousePosition()
+    xRelative = xRelative + math.abs(x - xTemp)
+    xTemp = x
 end
 
 function clickShoot()
