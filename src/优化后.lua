@@ -41,10 +41,13 @@ local clickFrequency = 100
 local secondClick = 'z'
 -- 连发按键
 local clickKey = 5
--- 连发开关键
+-- 连发开关键 支持 capslock numlock scrolllock 不能与总开关相同（默认capslock）
 local clickSwitchToggle = "numlock"
 -- 连发开关状态
 local clickSwitch = false
+
+-- 连发键双用功能键，（定制：侧键 连发与功能键双用）
+local clickDoubleUse = 'x'
 
 local lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
@@ -137,8 +140,12 @@ function shake()
         BetterSleep(Frequency)
     end
 
-    if (pressed5 and clickSwitch) then
-        clickShoot()
+    if (pressed5) then
+        if (clickSwitch) then
+            clickShoot()
+        else
+            PressAndReleaseMouseButton(clickDoubleUse)
+        end
     end
     if (switch) then
         MoveMouseRelative(range, range)
