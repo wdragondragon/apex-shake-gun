@@ -62,6 +62,12 @@ local xTemp = 0
 local xRelative = 0
 EnablePrimaryMouseButtonEvents(true)
 function OnEvent(event, arg)
+    --if (event == "MOUSE_BUTTON_PRESSED" and arg == 4) then
+    --  PressKey(57)
+    -- PressKey('c')
+    --ReleaseKey(57)
+    --ReleaseKey('c')
+    --end
     if (event == "MOUSE_BUTTON_PRESSED" and arg == YJHJButton) then
         PressKey(UseKey)
         Sleep(500)
@@ -139,7 +145,6 @@ function shake()
         MoveMouseRelative(-range, -range)
         BetterSleep(Frequency)
     end
-
     if (pressed5) then
         clickShoot()
     end
@@ -166,9 +171,12 @@ function checkSwitch()
         clickSwitch = IsKeyLockOn(clickSwitchToggle)
         lastFreshCasLockTime = GetRunningTime()
         --OutputLogMessage("Mouse is at %d\n", xRelative)
+
         if(xRelative>relativeMoveCloseShake) then
-            switch = false
-            OutputLogMessage("relative move close shake %s\n",GetRunningTime())
+            --switch = false
+            --OutputLogMessage("relative move close shake MOVE:%s,TIME:%s\n",xRelative,GetRunningTime())
+        else
+            --OutputLogMessage("relative move trun shake MOVE:%s,TIME:%s\n",xRelative,GetRunningTime())
         end
         xRelative = 0
     end
