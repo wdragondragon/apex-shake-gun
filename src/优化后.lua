@@ -60,6 +60,8 @@ local relativeMoveCloseShake = 600
 local xTemp = 0
 -- 相对移动
 local xRelative = 0
+
+local pushDown = 1
 EnablePrimaryMouseButtonEvents(true)
 function OnEvent(event, arg)
     --if (event == "MOUSE_BUTTON_PRESSED" and arg == 4) then
@@ -213,6 +215,6 @@ function mouseRelativeByHoldShakeTime()
     relativeTime = math.floor(relativeTime)
     relativeTime = 3 - relativeTime
     for _ = 1, relativeTime do
-        MoveMouseRelative(0, 1)
+        MoveMouseRelative(0, pushDown)
     end
 end
