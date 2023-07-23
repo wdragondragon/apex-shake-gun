@@ -86,13 +86,13 @@ function OnEvent(event, arg)
                 time = time + 1
                 time2 = time2 + Frequency
                 if( time >= Decline )then
-                    MoveMouseRelative(0, 6)
+                    MoveMouseRelative(0, pushDown)
                     if( time2 <= 300 )then
-                        MoveMouseRelative(0, 6)
+                        MoveMouseRelative(0, pushDown)
                         if( time2 <= 200 )then
-                            MoveMouseRelative(0, 6)
+                            MoveMouseRelative(0, pushDown)
                             if( time2 <= 100 )then
-                                MoveMouseRelative(0, 6)
+                                MoveMouseRelative(0, pushDown)
                             end
                         end
                     end
