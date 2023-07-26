@@ -1,0 +1,11 @@
+解压apexGun后，用记事本打开apex.conf，将lg_file_path改为当前解压后main.exe所在的apexGun目录，注意要把单斜杠转换成双斜杠，如下：
+D:\\Desktop\\apexGun
+refresh_button为刷新按键，默认为切枪键1,2，我的换枪键大小写f
+
+将main.lua复制到罗技宏脚本中保存并运行
+
+打开images，里面对应的是枪械的贴图，识别到与贴图一致时，会使用lua中名字相同前缀的脚本。
+
+例如：识别到当前枪械与 平行步枪.jpg 的相似度最大，则会使用 lua 文件夹下的 平行步枪.lua，如果该文件不存在，则使用 通用.lua
+
+配置完毕后，直接打开main.exe即可

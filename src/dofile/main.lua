@@ -1,6 +1,8 @@
 -- JDragon改良，开镜开枪时能随时开关抖枪，不需要松开鼠标
+-- 读取抖动，下压函数
+shakeFile = 'D:\\Desktop\\shake.lua'
 -- re 与 键鼠调整
-model = 'Nre'
+model = 're'
 LMD = 3.0
 pushDown = 1
 shakeNum = 1
@@ -37,32 +39,38 @@ range = (6 // (LMD * ADS)) + Level - 2
 --range = 2
 declineRange = (Decline + 2) * LMD
 
-local switch = false
+switch = false
 -- 控制下压时间
-local declineTime = 0
+declineTime = 0
 -- 开始抖枪时间
-local holdShakeTime = 0
+holdShakeTime = 0
 -- 开关状态缓存间隔
-local freshCasLockFrequency = 50
+freshCasLockFrequency = 50
 
 -- 连发间隔
-local clickFrequency = 100
+clickFrequency = 10
 -- 连发绑定第二开枪键
-local secondClick = 'z'
+secondClick = 'z'
 -- 连发按键
-local clickKey = 5
+clickKey = 5
 -- 连发开关键 支持 capslock numlock scrolllock 不能与总开关相同（默认capslock）
-local clickSwitchToggle = "numlock"
+clickSwitchToggle = "numlock"
 -- 连发开关状态
-local clickSwitch = false
+clickSwitch = false
 
 -- 连发键双用功能键，（定制：侧键 连发与功能键双用）
-local clickDoubleUse = 'z'
+clickDoubleUse = 'z'
 
-local lastClickTime = GetRunningTime()
+lastClickTime = GetRunningTime()
 -- 开关状态最后刷新时间
-local lastFreshCasLockTime = GetRunningTime()
+lastFreshCasLockTime = GetRunningTime()
 
+-- 鼠标移动幅度超过阈值，关闭抖枪
+relativeMoveCloseShake = 600
+-- 暂存x坐标
+xTemp = 0
+-- 相对移动
+xRelative = 0
 
 -- 鼠标移动幅度超过阈值，关闭抖枪
 local relativeMoveCloseShake = 600
@@ -153,22 +161,13 @@ function shake()
     -- 先左上后右下
     checkSwitch()
     if (switch) then
-        rockShake(range, Frequency)
-        mouseRelativeByHoldShakeTime()
+        -- 可重写
+        rockShake(range, Frequency, shakeNum)
+        -- 可重写
+        mouseRelativeByHoldShakeTime(holdShakeTime, declineRange)
     end
     if (pressed5) then
         clickShoot()
-    end
-end
-
-function rockShake(range, frequency)
-    local horizontal = range - 10
-    local vertical = range
-    for _ = 1, shakeNum do
-        MoveMouseRelative(-horizontal, -vertical)
-        BetterSleep(frequency)
-        MoveMouseRelative(horizontal, vertical)
-        BetterSleep(frequency)
     end
 end
 
@@ -177,6 +176,7 @@ function checkSwitch()
         return
     end
     if (GetRunningTime() - lastFreshCasLockTime > freshCasLockFrequency) then
+        loadFromFile()
         if (IsKeyLockOn("capslock")) then
             switch = true
         else
@@ -213,23 +213,8 @@ function clickShoot()
         lastClickTime = GetRunningTime()
     end
 end
--- 每次睡眠增加time和time2 当time大于Decline_range时，下压
--- 一开始下压力度为4，每次下压后time2增加FrequencyZ
--- 当time2在100ms内时，连续下压4次
--- 当time2在200ms内时，连续下压3次
--- 当time2在400ms内时，连续下压2次
--- 当time2大于400ms时，下压1次
--- 每次下压后time清零\
-function mouseRelativeByHoldShakeTime()
-    if (declineTime >= declineRange) then
-        relativeTime = math.log(holdShakeTime / 100, 2)
-        relativeTime = math.max(relativeTime, -1)
-        relativeTime = math.min(relativeTime, 2)
-        relativeTime = math.floor(relativeTime)
-        relativeTime = 3 - relativeTime
-        for _ = 1, relativeTime do
-            MoveMouseRelative(0, pushDown)
-        end
-        declineTime = 0
-    end
+
+function loadFromFile()
+    OutputLogMessage("load file ,TIME:%s\n", GetRunningTime())
+    dofile(shakeFile)
 end
