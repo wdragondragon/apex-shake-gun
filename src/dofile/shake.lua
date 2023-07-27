@@ -9,7 +9,9 @@
 -- holdShakeTime 开枪键按下保持时间
 -- declineRange 下压间隔
 -- declineTime  上次下压相对时间
-function mouseRelativeByHoldShakeTime(holdShakeTime, declineRange)
+-- pushDown 下压力度
+-- declineTime 上次下压相对时间
+function mouseRelativeByHoldShakeTime()
     if (declineTime >= declineRange) then
         local relativeTime = math.log(holdShakeTime / 100, 2)
         relativeTime = math.max(relativeTime, -1)
@@ -26,8 +28,11 @@ end
 -- range 抖动幅度
 -- frequency 抖动间隔
 -- shakeNum 抖动次数
-function rockShake(range, frequency, shakeNum)
-    local horizontal = range - 10
+function rockShake()
+    local horizontal = range
+    if (model == 're') then
+        horizontal = horizontal - 10
+    end
     local vertical = range
     for _ = 1, shakeNum do
         MoveMouseRelative(-horizontal, -vertical)
