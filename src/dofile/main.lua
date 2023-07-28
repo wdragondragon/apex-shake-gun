@@ -1,6 +1,6 @@
 -- JDragon改良，开镜开枪时能随时开关抖枪，不需要松开鼠标
 -- 读取抖动，下压函数
-shakeFile = 'D:\\Desktop\\shake.lua'
+shakeFile = 'D:\\Desktop\\apexGun\\shake.lua'
 -- re 与 键鼠调整
 model = 're'
 --ADS输入游戏内ADS鼠标灵敏度,也叫开镜灵敏度，默认1.0
@@ -37,6 +37,13 @@ lastFreshCasLockTime = GetRunningTime()
 lastLoadFileTime = GetRunningTime()
 -- 刷新配置间隔
 loadFileFrequency = 500
+
+-- 鼠标移动幅度超过阈值，关闭抖枪
+local relativeMoveCloseShake = 600
+-- 暂存x坐标
+local xTemp = 0
+-- 相对移动
+local xRelative = 0
 
 
 -- 以下为shake的配置,该文件里不应该使用
@@ -117,6 +124,7 @@ function shake()
     if (not pressed1 and not pressed5) then
         return
     end
+    checkMouseMoveRelative()
     -- 根据LMD和ADS调整Range和Decline_range
     -- 先左上后右下
     checkSwitch()
@@ -141,12 +149,26 @@ function checkSwitch()
         end
         clickSwitch = IsKeyLockOn(clickSwitchToggle)
         lastFreshCasLockTime = runningTime
+
+        if (xRelative > relativeMoveCloseShake) then
+            --switch = false
+            --OutputLogMessage("relative move close shake MOVE:%s,TIME:%s\n",xRelative,GetRunningTime())
+        else
+            --OutputLogMessage("relative move trun shake MOVE:%s,TIME:%s\n",xRelative,GetRunningTime())
+        end
+        xRelative = 0
     end
     if (runningTime - lastLoadFileTime > loadFileFrequency) then
         loadFromFile()
         lastLoadFileTime = runningTime
     end
     return switch
+end
+
+function checkMouseMoveRelative()
+    x, y = GetMousePosition()
+    xRelative = xRelative + math.abs(x - xTemp)
+    xTemp = x
 end
 
 function clickShoot()
