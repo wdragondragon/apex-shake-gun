@@ -39,7 +39,7 @@ lastLoadFileTime = GetRunningTime()
 loadFileFrequency = 500
 
 -- 鼠标移动幅度超过阈值，关闭抖枪
-local relativeMoveCloseShake = 600
+local relativeMoveCloseShake = 1000
 -- 暂存x坐标
 local xTemp = 0
 -- 相对移动
@@ -144,6 +144,7 @@ function checkSwitch()
     if (runningTime - lastFreshCasLockTime > freshCasLockFrequency) then
         if (IsKeyLockOn("capslock")) then
             switch = true
+            OutputLogMessage("holdShakeTime is %s\n", holdShakeTime)
         else
             switch = false
         end
@@ -184,6 +185,8 @@ function clickShoot()
 end
 
 function loadFromFile()
-    OutputLogMessage("load file ,TIME:%s\n", GetRunningTime())
-    dofile(shakeFile)
+    if(switch) then
+        OutputLogMessage("load file ,TIME:%s\n", GetRunningTime())
+        dofile(shakeFile)
+    end
 end
