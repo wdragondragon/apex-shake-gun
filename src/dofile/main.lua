@@ -82,6 +82,7 @@ function OnEvent(event, arg)
     else
         switch = false
     end
+    loadFromFile()
     clickSwitch = IsKeyLockOn(clickSwitchToggle)
     clearTime()
     BetterSleep(5)
@@ -166,12 +167,6 @@ function checkSwitch()
     return switch
 end
 
-function checkMouseMoveRelative()
-    x, y = GetMousePosition()
-    xRelative = xRelative + math.abs(x - xTemp)
-    xTemp = x
-end
-
 function clickShoot()
     local runningTime = GetRunningTime()
     if (runningTime - lastClickTime > clickFrequency) then
@@ -182,6 +177,12 @@ function clickShoot()
         end
         lastClickTime = runningTime
     end
+end
+
+function checkMouseMoveRelative()
+    x, y = GetMousePosition()
+    xRelative = xRelative + math.abs(x - xTemp)
+    xTemp = x
 end
 
 function loadFromFile()
