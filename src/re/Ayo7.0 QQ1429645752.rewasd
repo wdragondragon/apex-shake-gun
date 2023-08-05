@@ -1,0 +1,3685 @@
+{
+  "schemaVersion": 3.0,
+  "appVersion": "6.6.0",
+  "config": {
+    "appName": "Ayo7.0 QQ1429645752",
+    "comment": "Custom configuration to play apex game",
+    "minTimeUnit": 1,
+    "description": "转向层   Q1429645752"
+  },
+  "devices": {
+    "groups": [
+      {
+        "id": 1,
+        "name": "keyboard"
+      },
+      {
+        "id": 2,
+        "name": "mouse"
+      }
+    ],
+    "hardware": [
+      {
+        "id": 1,
+        "name": "gamepad",
+        "default": {
+          "touchpads": [
+            {
+              "id": 2,
+              "mode": "analog",
+              "trackballFriction": 50
+            }
+          ]
+        },
+        "convertToVirtual": true
+      },
+      {
+        "groupId": 1,
+        "id": 11,
+        "name": "keyboard",
+        "type": "standard"
+      },
+      {
+        "groupId": 2,
+        "id": 23,
+        "name": "mouse"
+      },
+      {
+        "groupId": 2,
+        "id": 22,
+        "name": "mouse",
+        "default": {
+          "stick": {
+            "zones": [
+              {
+                "name": "high",
+                "x": 100
+              }
+            ],
+            "curves": {
+              "points": {
+                "horizontal": [
+                  {
+                    "id": 1,
+                    "value": 8847,
+                    "travel": 5906
+                  },
+                  {
+                    "id": 2,
+                    "value": 17694,
+                    "travel": 12938
+                  },
+                  {
+                    "id": 3,
+                    "value": 25231,
+                    "travel": 20392
+                  },
+                  {
+                    "id": 4,
+                    "value": 32768,
+                    "travel": 29955
+                  }
+                ],
+                "vertical": [
+                  {
+                    "id": 1,
+                    "value": 8847,
+                    "travel": 5906
+                  },
+                  {
+                    "id": 2,
+                    "value": 17694,
+                    "travel": 12938
+                  },
+                  {
+                    "id": 3,
+                    "value": 25231,
+                    "travel": 20392
+                  },
+                  {
+                    "id": 4,
+                    "value": 32768,
+                    "travel": 29955
+                  }
+                ]
+              }
+            },
+            "smoothing": 1,
+            "noiseFilter": 1,
+            "scaleFactorX": 800,
+            "scaleFactorY": 900
+          }
+        },
+        "shifts": [
+          {
+            "shiftId": 1,
+            "stick": {
+              "zones": [
+                {
+                  "name": "high",
+                  "x": 32768
+                }
+              ],
+              "curves": {
+                "points": {
+                  "horizontal": [
+                    {
+                      "id": 1,
+                      "value": 7000,
+                      "travel": 5000
+                    },
+                    {
+                      "id": 2,
+                      "value": 14500,
+                      "travel": 11000
+                    },
+                    {
+                      "id": 3,
+                      "value": 22000,
+                      "travel": 18000
+                    },
+                    {
+                      "id": 4,
+                      "value": 27525,
+                      "travel": 24899
+                    }
+                  ],
+                  "vertical": [
+                    {
+                      "id": 1,
+                      "value": 7000,
+                      "travel": 5000
+                    },
+                    {
+                      "id": 2,
+                      "value": 14500,
+                      "travel": 11000
+                    },
+                    {
+                      "id": 3,
+                      "value": 22000,
+                      "travel": 18000
+                    },
+                    {
+                      "id": 4,
+                      "value": 27525,
+                      "travel": 24899
+                    }
+                  ]
+                }
+              },
+              "smoothing": 1,
+              "noiseFilter": 1,
+              "scaleFactorX": 800,
+              "scaleFactorY": 900
+            }
+          }
+        ]
+      }
+    ],
+    "virtual": {
+      "gamepads": [
+        {
+          "id": 1,
+          "type": "ds4",
+          "default": {
+            "sticks": [
+              {
+                "name": "right",
+                "initialDeflection": 8000,
+                "maxDeflection": 32767,
+                "initialSpeed": 10
+              }
+            ]
+          },
+          "shifts": [
+            {
+              "shiftId": 1,
+              "sticks": [
+                {
+                  "name": "right",
+                  "initialDeflection": 8000,
+                  "initialSpeed": 10
+                }
+              ]
+            },
+            {
+              "shiftId": 2,
+              "sticks": [
+                {
+                  "name": "right",
+                  "initialDeflection": 6000
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "shifts": [
+    {
+      "id": 1,
+      "type": "default",
+      "description": "开镜层   Q1429645752",
+      "unheritableMasks": [
+        36,
+        42
+      ]
+    },
+    {
+      "id": 2,
+      "type": "default",
+      "description": "道具层   Q1429645752",
+      "unheritableMasks": [
+        36,
+        50,
+        51
+      ]
+    },
+    {
+      "id": 3,
+      "type": "default",
+      "description": "键鼠层   Q1429645752",
+      "unheritableMasks": [
+        36,
+        40,
+        41,
+        43,
+        44,
+        50,
+        51
+      ]
+    }
+  ],
+  "masks": [
+    {
+      "id": 1,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 1,
+          "description": "XB, Stadia: A / DS4: Cross / Nintendo: B"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 2,
+          "description": "XB, Stadia: B / DS4: Circle / Nintendo: A"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 3,
+          "description": "XB, Stadia: X / DS4: Square / Nintendo: Y"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 4,
+          "description": "XB, Stadia: Y / DS4: Triangle / Nintendo: X"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 5,
+          "description": "XB: LeftShoulder / DS4, Stadia: L1 / Nintendo: L"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 6,
+          "description": "XB: RightShoulder / DS4, Stadia: R1 / Nintendo: R"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 7,
+          "description": "XB: View / XB360: Back / DS4: Share / Nintendo: Minus / DS3: Select / Stadia: Options / NvidiaShield: Back / SNES: Select"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 8,
+          "description": "XB, Stadia: Menu / XB360: Start / DS4: Options / Nintendo: Plus / DS3: Start / NvidiaShield: Start / SNES: Start"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 9,
+          "description": "XB, Nintendo: LeftStick / DS4, Stadia: L3"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 10,
+          "description": "XB, Nintendo: RightStick / DS4, Stadia: R3"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 11,
+          "description": "XB, Nintendo, Flydigi: Home / DS4: PS / Stadia: Stadia / NvidiaShield: Nvidia"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 29,
+          "description": "XB: LeftUpperPaddle / JoyCon: Left SL / Flydigi: M4 / GameSirG7: M2"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 30,
+          "description": "XB: RightUpperPaddle / JoyCon: Right SR / Flydigi: M3 / GameSirG7: M1"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 31,
+          "description": "XB, Steam: LeftLowerPaddle / JoyCon: Left SR / NvidiaShield: Minus / Flydigi: M2"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 32,
+          "description": "XB, Steam: RightLowerPaddle / JoyCon: Right SL / NvidiaShield: Plus / Flydigi: M1"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 34,
+          "description": "DpadDown"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 51,
+          "description": "BtnLeftTrigger"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 55,
+          "description": "BtnRightTrigger"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 1,
+          "description": "DIK_ESCAPE"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 5,
+          "description": "DIK_4"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 15,
+          "description": "DIK_TAB"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 17,
+          "description": "DIK_W"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 18,
+          "description": "DIK_E"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 29,
+          "description": "DIK_LCONTROL"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 30,
+          "description": "DIK_A"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 31,
+          "description": "DIK_S"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 32,
+          "description": "DIK_D"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 34,
+          "description": "DIK_G"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 41,
+          "description": "DIK_GRAVE"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 42,
+          "description": "DIK_LSHIFT"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 44,
+          "description": "DIK_Z"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 50,
+          "description": "DIK_M"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 57,
+          "description": "DIK_SPACE"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 59,
+          "description": "DIK_F1"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 63,
+          "description": "DIK_F5"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 219,
+          "description": "DIK_LWIN"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 48,
+          "description": "DIK_B"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 67,
+          "description": "DIK_F9"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "set": [
+        {
+          "deviceId": 11,
+          "buttonId": 33,
+          "description": "DIK_F"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 1,
+          "description": "MOUSE_BTN_1"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 2,
+          "description": "MOUSE_BTN_2"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 3,
+          "description": "MOUSE_BTN_3"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 4,
+          "description": "MOUSE_BTN_4"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 5,
+          "description": "MOUSE_BTN_5"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 63,
+          "description": "MouseStickHigh"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 64,
+          "description": "MouseStickUp"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 65,
+          "description": "MouseStickDown"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 66,
+          "description": "MouseStickLeft"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 67,
+          "description": "MouseStickRight"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 171,
+          "description": "Mouse scroll up"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "set": [
+        {
+          "deviceId": 23,
+          "buttonId": 172,
+          "description": "Mouse scroll down"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "id": 1,
+      "type": 1,
+      "name": "COMMAND_TURN_REMAP_OFF"
+    }
+  ],
+  "mappings": [
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 1,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 2,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 3,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 4,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 5,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 6,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 7,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 8,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 9,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 10,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 11,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 12,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 13,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 14,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 15,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 16,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 17,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 18,
+          "activator": {
+            "type": "single",
+            "mode": "onetime"
+          }
+        }
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 19,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 1,
+            "description": "DIK_ESCAPE"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 20,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 2
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 21,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 8,
+            "description": "XB, Stadia: Menu / XB360: Start / DS4: Options / Nintendo: Plus / DS3: Start / NvidiaShield: Start / SNES: Start"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 22,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 40,
+            "description": "LeftStickUp",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 23,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 3,
+            "description": "XB, Stadia: X / DS4: Square / Nintendo: Y"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 24,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 2,
+            "description": "XB, Stadia: B / DS4: Circle / Nintendo: A"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 25,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 42,
+            "description": "LeftStickLeft",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 26,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 41,
+            "description": "LeftStickDown",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 27,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 43,
+            "description": "LeftStickRight",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 28,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 2
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 29,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 3
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 30,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 9,
+            "description": "XB, Nintendo: LeftStick / DS4, Stadia: L3"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 31,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 44,
+            "description": "DIK_Z"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 32,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 50,
+            "description": "DIK_M"
+          }
+        }
+      ],
+      "jumpToLayer": {
+        "layer": 2
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "mask": {
+          "id": 33,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 1,
+            "description": "XB, Stadia: A / DS4: Cross / Nintendo: B"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 34,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 2
+      }
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 35,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "command": {
+            "id": 1
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 22,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 40,
+            "description": "LeftStickUp",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 25,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 42,
+            "description": "LeftStickLeft",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 26,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 41,
+            "description": "LeftStickDown",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 27,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 43,
+            "description": "LeftStickRight",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 29,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 19,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 20,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 33,
+            "description": "DpadUp"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 20,
+          "activator": {
+            "type": "release",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 21,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 8,
+            "description": "XB, Stadia: Menu / XB360: Start / DS4: Options / Nintendo: Plus / DS3: Start / NvidiaShield: Start / SNES: Start"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 22,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W"
+          }
+        }
+      ]
+    },
+    {
+      "description": "QQ1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 23,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 18,
+            "description": "DIK_E"
+          }
+        }
+      ]
+    },
+    {
+      "description": "QQ:1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 24,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL"
+          }
+        }
+      ]
+    },
+    {
+      "description": "QQ:1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 25,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 30,
+            "description": "DIK_A"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 26,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 31,
+            "description": "DIK_S"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 27,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 32,
+            "description": "DIK_D"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 28,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 36,
+            "description": "DpadRight"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 28,
+          "activator": {
+            "type": "release",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "QQ:1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 29,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 30,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 31,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 44,
+            "description": "DIK_Z"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 37,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 48,
+            "description": "DIK_B"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 32,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 50,
+            "description": "DIK_M"
+          }
+        }
+      ],
+      "jumpToLayer": {
+        "layer": 0,
+        "delay": 20
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 33,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 34,
+          "activator": {
+            "type": "release",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "QQ1429645752",
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 38,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "command": {
+            "id": 1
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 19,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 1,
+            "description": "DIK_ESCAPE"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 20,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 5,
+            "description": "DIK_4"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 21,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 15,
+            "description": "DIK_TAB"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 22,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 23,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 18,
+            "description": "DIK_E"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 24,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 25,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 30,
+            "description": "DIK_A"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 26,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 31,
+            "description": "DIK_S"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 27,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 32,
+            "description": "DIK_D"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 39,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 33,
+            "description": "DIK_F"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 28,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 34,
+            "description": "DIK_G"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 29,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 30,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 31,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 44,
+            "description": "DIK_Z"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 37,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 48,
+            "description": "DIK_B"
+          }
+        }
+      ]
+    },
+    {
+      "description": "作者QQ：1429645752",
+      "condition": {
+        "shiftId": 3,
+        "mask": {
+          "id": 33,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 1,
+          "description": "DIK_ESCAPE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 5,
+          "description": "DIK_4"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 15,
+          "description": "DIK_TAB"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 17,
+          "description": "DIK_W"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 29,
+          "description": "DIK_LCONTROL"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 30,
+          "description": "DIK_A"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 31,
+          "description": "DIK_S"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 32,
+          "description": "DIK_D"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 34,
+          "description": "DIK_G"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 41,
+          "description": "DIK_GRAVE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 42,
+          "description": "DIK_LSHIFT"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 44,
+          "description": "DIK_Z"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 50,
+          "description": "DIK_M"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 57,
+          "description": "DIK_SPACE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 63,
+          "description": "DIK_F5"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 219,
+          "description": "DIK_LWIN"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 17,
+          "description": "DIK_W"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 30,
+          "description": "DIK_A"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 31,
+          "description": "DIK_S"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 32,
+          "description": "DIK_D"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 1,
+          "description": "DIK_ESCAPE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 5,
+          "description": "DIK_4"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 15,
+          "description": "DIK_TAB"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 17,
+          "description": "DIK_W"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 18,
+          "description": "DIK_E"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 29,
+          "description": "DIK_LCONTROL"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 30,
+          "description": "DIK_A"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 31,
+          "description": "DIK_S"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 32,
+          "description": "DIK_D"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 34,
+          "description": "DIK_G"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 41,
+          "description": "DIK_GRAVE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 42,
+          "description": "DIK_LSHIFT"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 44,
+          "description": "DIK_Z"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 48,
+          "description": "DIK_B"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 50,
+          "description": "DIK_M"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 57,
+          "description": "DIK_SPACE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 67,
+          "description": "DIK_F9"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 1,
+          "description": "DIK_ESCAPE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 5,
+          "description": "DIK_4"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 15,
+          "description": "DIK_TAB"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 17,
+          "description": "DIK_W"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 18,
+          "description": "DIK_E"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 29,
+          "description": "DIK_LCONTROL"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 30,
+          "description": "DIK_A"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 31,
+          "description": "DIK_S"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 32,
+          "description": "DIK_D"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 33,
+          "description": "DIK_F"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 34,
+          "description": "DIK_G"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 41,
+          "description": "DIK_GRAVE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 42,
+          "description": "DIK_LSHIFT"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 44,
+          "description": "DIK_Z"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 48,
+          "description": "DIK_B"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 3,
+        "hardware": {
+          "deviceId": 11,
+          "buttonId": 57,
+          "description": "DIK_SPACE"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 40,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 55,
+            "description": "BtnRightTrigger"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 41,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 1
+      }
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 42,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 2
+      }
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 43,
+          "activator": {
+            "type": "single",
+            "mode": "onetime",
+            "params": {
+              "expert": true,
+              "delay": 20
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 17,
+            "description": "DIK_W",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 44,
+          "activator": {
+            "type": "single",
+            "mode": "turbo",
+            "params": {
+              "pause": 100,
+              "delay": 0
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE",
+            "action": "down"
+          }
+        },
+        {
+          "pause": {
+            "value": 3
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 57,
+            "description": "DIK_SPACE",
+            "action": "up"
+          }
+        },
+        {
+          "pause": {
+            "value": 3
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL",
+            "action": "down"
+          }
+        },
+        {
+          "pause": {
+            "value": 3
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 45,
+          "activator": {
+            "type": "single",
+            "mode": "repeat",
+            "params": {
+              "times": 888,
+              "delay": 50
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 50,
+            "description": "RightStickRight",
+            "absolute": true,
+            "value": 983
+          }
+        },
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 47,
+            "description": "RightStickUp",
+            "absolute": true,
+            "value": 983
+          }
+        },
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 49,
+            "description": "RightStickLeft",
+            "absolute": true,
+            "value": 983
+          }
+        },
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 48,
+            "description": "RightStickDown",
+            "absolute": true,
+            "value": 983
+          }
+        }
+      ]
+    },
+    {
+      "description": "QQ1429645752",
+      "condition": {
+        "mask": {
+          "id": 46,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 47,
+            "description": "RightStickUp",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 47,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 48,
+            "description": "RightStickDown",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 48,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 49,
+            "description": "RightStickLeft",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "mask": {
+          "id": 49,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 50,
+            "description": "RightStickRight",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "stick": "mouse",
+          "axis": "x"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "stick": "mouse",
+          "axis": "y"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 40,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 55,
+            "description": "BtnRightTrigger"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 41,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 51,
+            "description": "BtnLeftTrigger"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 41,
+          "activator": {
+            "type": "release",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "description": "QQ：1429645752",
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 46,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 47,
+            "description": "RightStickUp",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 47,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 48,
+            "description": "RightStickDown",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 48,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 49,
+            "description": "RightStickLeft",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 49,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 50,
+            "description": "RightStickRight",
+            "absolute": true,
+            "value": 32767
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 23,
+          "stick": "mouse",
+          "axis": "x"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 23,
+          "stick": "mouse",
+          "axis": "y"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 40,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "mouse": {
+            "buttonId": 1
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 41,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "mouse": {
+            "buttonId": 2
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 42,
+          "activator": {
+            "type": "single",
+            "mode": "hold_until_release"
+          }
+        }
+      },
+      "macros": [
+        {
+          "gamepad": {
+            "id": 1,
+            "buttonId": 6,
+            "description": "XB: RightShoulder / DS4, Stadia: R1 / Nintendo: R"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 42,
+          "activator": {
+            "type": "release",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "jumpToLayer": {
+        "layer": 0
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 1,
+          "description": "MOUSE_BTN_1"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 2,
+          "description": "MOUSE_BTN_2"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 3,
+          "description": "MOUSE_BTN_3"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 4,
+          "description": "MOUSE_BTN_4"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 5,
+          "description": "MOUSE_BTN_5"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 1,
+          "description": "MOUSE_BTN_1"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 2,
+          "description": "MOUSE_BTN_2"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 1,
+          "description": "MOUSE_BTN_1"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 2,
+          "description": "MOUSE_BTN_2"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "hardware": {
+          "deviceId": 23,
+          "buttonId": 3,
+          "description": "MOUSE_BTN_3"
+        }
+      },
+      "hardware": {
+        "unmap": true
+      }
+    }
+  ]
+}
