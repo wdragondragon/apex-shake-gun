@@ -50,6 +50,7 @@ local clickFrequency = 100
 -- 连发绑定第二开枪键
 local secondClick = 'z'
 -- 连发按键
+local clickOpen = false
 local clickKey = 5
 -- 连发开关键 支持 capslock numlock scrolllock 不能与总开关相同（默认capslock）
 local clickSwitchToggle = "numlock"
@@ -156,7 +157,7 @@ function shake()
         rockShake(range, Frequency)
         mouseRelativeByHoldShakeTime()
     end
-    if (pressed5) then
+    if (pressed5 and clickOpen) then
         clickShoot()
     end
 end
