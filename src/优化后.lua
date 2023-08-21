@@ -178,10 +178,12 @@ function checkSwitch()
         return
     end
     if (GetRunningTime() - lastFreshCasLockTime > freshCasLockFrequency) then
-        if (IsKeyLockOn("capslock")) then
-            switch = true
-        else
-            switch = false
+        if (SwitchButton == 888) then
+            if (IsKeyLockOn("capslock")) then
+                switch = true
+            else
+                switch = false
+            end
         end
         clickSwitch = IsKeyLockOn(clickSwitchToggle)
         lastFreshCasLockTime = GetRunningTime()
